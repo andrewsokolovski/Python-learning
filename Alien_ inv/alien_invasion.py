@@ -22,6 +22,7 @@ class AlienInvasion:
         self.ship = Ship(self.screen)
 
         
+        
 
     def run_game(self):
         """ Launch the mane game"""

@@ -14,6 +14,7 @@ class Ship():
 		#Every ship shows up at the bottom of the edge 
 		self.rect.midbottom = self.screen_rect.midbottom
 
+
 	def blitme(self):
 		""" drawing ship in current position """
 		self.screen.blit(self.image, self.rect)
