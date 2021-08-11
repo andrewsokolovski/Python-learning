@@ -1,7 +1,5 @@
 import sys
-
 import pygame
-
 from settings import Settings
 from ship import Ship
 
@@ -13,16 +11,20 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
 
+        
+
+
         self.screen = pygame.display.set_mode(
             (self.settings.screen_widgth, self.settings.screen_heights))
+
 
         #self.screen = pygame.display.set_mode((1200, 800))
         pygame.display.set_caption("Alien Invasion my first program")
 
         self.ship = Ship(self.screen)
 
-        
-        
+
+
 
     def run_game(self):
         """ Launch the mane game"""
