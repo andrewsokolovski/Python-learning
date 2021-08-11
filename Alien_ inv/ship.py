@@ -9,7 +9,7 @@ class Ship():
 
 		#Load ship drawing and get rectangle
 		self.image = pygame.image.load('images/ship1.jpg')
-		self.image = pygame.transform.scale(self.image,(80,70))
+		self.image = pygame.transform.scale(self.image, (80, 70))
 		self.rect = self.image.get_rect()
 		#Every ship shows up at the bottom of the edge 
 		self.rect.midbottom = self.screen_rect.midbottom

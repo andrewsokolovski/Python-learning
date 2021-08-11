@@ -2,6 +2,7 @@ import sys
 import pygame
 from settings import Settings
 from ship import Ship
+from smth import Smth
 
 
 class AlienInvasion:
@@ -11,7 +12,7 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
 
-
+        
 
 
         self.screen = pygame.display.set_mode(
@@ -22,7 +23,7 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion my first program")
 
         self.ship = Ship(self.screen)
-
+        self.smth = Smth(self.screen)
 
 
 
@@ -31,13 +32,13 @@ class AlienInvasion:
         while True:
             # Follow events of keyboard and mouth
             for event in pygame.event.get():
-
                 if event.type == pygame.QUIT:
                     sys.exit()
 
                 # Each cicle run the scree redraw
             self.screen.fill(self.settings.bg_color)
             self.ship.blitme()
+            self.smth.blitme()
 
 
             #Reflects the last drawing screen.
