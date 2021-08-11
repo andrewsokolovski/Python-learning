@@ -11,7 +11,7 @@ class AlienInvasion:
         pygame.init()
         self.settings = Settings()
 
-        
+
 
 
         self.screen = pygame.display.set_mode(
@@ -31,6 +31,7 @@ class AlienInvasion:
         while True:
             # Follow events of keyboard and mouth
             for event in pygame.event.get():
+
                 if event.type == pygame.QUIT:
                     sys.exit()
 
