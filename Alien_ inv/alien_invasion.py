@@ -23,26 +23,34 @@ class AlienInvasion:
         pygame.display.set_caption("Alien Invasion my first program")
 
         self.ship = Ship(self.screen)
-        self.smth = Smth(self.screen)
+
 
 
 
     def run_game(self):
         """ Launch the mane game"""
         while True:
-            # Follow events of keyboard and mouth
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
+            self._check_events()
+            self._update_screen()
 
-                # Each cicle run the scree redraw
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
-            self.smth.blitme()
+    def _check_events(self):
+         # Follow events of keyboard and mouth
+         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    # move the sheep to the right.
+                    self.ship.rect.x += 1
 
 
-            #Reflects the last drawing screen.
-            pygame.display.flip()
+    def _update_screen(self):
+        """ Each cicle run the scree redraw """
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+
+        #Reflects the last drawing screen.
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
