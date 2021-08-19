@@ -9,3 +9,5 @@ class Settings():
         self.screen_heights = 800
         #Color of becgraund
         self.bg_color = (230, 230, 230)
+        #Ship settings
+        self.ship_speed = 1.5

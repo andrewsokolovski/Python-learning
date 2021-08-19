@@ -1,11 +1,15 @@
 import pygame
 
+
 class Ship():
 	""" class for ship running """
 	def __init__(self, ai_game):
 		""" init ship and assign start posission """
-		self.screen = ai_game
-		self.screen_rect = ai_game.get_rect()
+		self.screen = ai_game.screen
+		self.settings = ai_game.settings
+
+		#self.settings = ai_game.settings
+		self.screen_rect = ai_game.screen.get_rect()
 
 		#Load ship drawing and get rectangle
 		self.image = pygame.image.load('images/ship1.jpg')
@@ -15,6 +19,9 @@ class Ship():
 		#Every ship shows up at the bottom of the edge
 		self.rect.midbottom = self.screen_rect.midbottom
 
+		#saving вещественной координаты центра коробля
+		self.x = float(self.rect.x)
+
 		#Flag of moving
 		self.moving_right = False
 		self.moving_left = False
@@ -22,10 +29,11 @@ class Ship():
 	def update(self):
 		""" Update ship position in according to the flag"""
 		if self.moving_right:
-			self.rect.x += 1
+			self.x += self.settings.ship_speed
+			
 		elif self.moving_left:
-			self.rect.x -= 1
-
+			self.x -= self.settings.ship_speed
+		self.rect.x = self.x
 	def blitme(self):
 		""" drawing ship in current position """
 		self.screen.blit(self.image, self.rect)

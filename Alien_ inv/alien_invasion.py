@@ -2,7 +2,7 @@ import sys
 import pygame
 from settings import Settings
 from ship import Ship
-from smth import Smth
+
 
 
 class AlienInvasion:
@@ -22,7 +22,7 @@ class AlienInvasion:
         #self.screen = pygame.display.set_mode((1200, 800))
         pygame.display.set_caption("Alien Invasion my first program")
 
-        self.ship = Ship(self.screen)
+        self.ship = Ship(self)
 
 
 
