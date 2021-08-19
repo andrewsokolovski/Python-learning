@@ -28,12 +28,19 @@ class Ship():
 
 	def update(self):
 		""" Update ship position in according to the flag"""
-		if self.moving_right:
+
+		# Update atribite x of ship object, but not rect
+
+		if self.moving_right and self.rect.right < self.screen_rect.right:
 			self.x += self.settings.ship_speed
 			
-		elif self.moving_left:
+		elif self.moving_left and self.rect.left > 0:
 			self.x -= self.settings.ship_speed
 		self.rect.x = self.x
+
+
+
+
 	def blitme(self):
 		""" drawing ship in current position """
 		self.screen.blit(self.image, self.rect)
